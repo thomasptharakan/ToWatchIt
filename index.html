@@ -1,46 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>ToWatchIt</title>
 </head>
 
 <body>
-    <!-- Added form for search text box -->
-    <form>
-        <div style="margin: 15px;">
-            <label for="movieSearch">Movie Search</label>
-            <input type="text" class="form-control"  id="movieSearch" aria-describedby="searchHelp" style="width: 80%; display: inline-block; ">
-            <button type="submit" class="btn btn-primary" style="vertical-align: top;"><i class="bi bi-search"></i></button>
-            <small id="searchHelp" class="form-text text-muted">Enter the movie that you want to search for</small>
+    <!-- Add Nav Bar with search function -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src=""></a>
+        <a class="navbar-brand" href="#">
+            <img src="images/image_Abb.png" width="80" height="60" class="d-inline-block align-middle" alt="">
+            ToWatchIt
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
+    </nav>
 
+    <!-- Add JumboTron for upcoming movie -->
+    <div class="container">
+        <div class="jumbotron mt-4">
+            <div class="row">
+                <!-- Added Iframe -->
+                <div class="col-4">
+                        <iframe src="https://www.youtube.com/embed/B5h2xRYmANk" title="How High" allowfullscreen="true"
+                            class= "responsive-iframe" style="height: 100%;"></iframe>
+                </div>
+                <div class="col-8">
+                    <h1 class="display-4">The Matrix</h1>
+                    <p class="lead">
+                        Plot of the story
+                    </p>
+                    <hr class="my-4" />
+                    <p>Rating:</p>
+                    <p>Actors:</p>
+                    <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
 
-        
-    </form>
+    <!-- Add card group -->
+    <div class="card-group container">
+        <div class="row">
+            <div class="card">
+                <h5 class="card-title" style="text-align: center; padding: 5px;">23/03/2023</h5>
+                <iframe src="https://www.youtube.com/embed/B5h2xRYmANk" title="How High" allowfullscreen="true"
+                    style="height: 100%;"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">Cinderella </h5>
+                    <p class="card-text">This is the plot of the movie</p>
+                </div>
+            </div>
+            <div class="card">
+                <h5 class="card-title" style="text-align: center; padding: 5px;">24/03/2023</h5>
+                <iframe src="https://www.youtube.com/embed/pU8-7BX9uxs" title="How High" allowfullscreen="true"
+                    style="height: 100%;"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">John Wick 3</h5>
+                    <p class="card-text">This is the plot of the movie</p>
+                </div>
+            </div>
+            <div class="card">
+                <h5 class="card-title" style="text-align: center; padding: 5px;">25/03/2023</h5>
+                <iframe src="https://www.youtube.com/embed/B5h2xRYmANk" title="How High" allowfullscreen="true"
+                    style="height: 100%;"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">Cinderella </h5>
+                    <p class="card-text">This is the plot of the movie</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card">
+                <h5 class="card-title" style="text-align: center; padding: 5px;">25/03/2023</h5>
+                <iframe src="https://www.youtube.com/embed/B5h2xRYmANk" title="How High" allowfullscreen="true"
+                    style="height: 100%;"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">Cinderella </h5>
+                    <p class="card-text">This is the plot of the movie</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Added jquery ui and CSS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
-    />
+    <link rel="stylesheet"
+        href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <!-- Added BootStrap -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
     <!-- Keys JS -->
     <script src="./js/keys.js"></script>
-  </body>
+</body>
+
 </html>
