@@ -1,5 +1,5 @@
 var searchMovie = {
-  movieTitle : '',
+  movieTitle : 'Test',
   moviePlot : '' , 
   movieActors : '',
   movieRatingSource : '',
@@ -19,6 +19,8 @@ function getMovieDetails(movieName){
   getOMDBApi(movieName);
   getYouTubeAPI(movieName);
   console.log(searchMovie);
+  
+ 
 }
 
 function getOMDBApi(movieName) {
@@ -35,10 +37,15 @@ function getOMDBApi(movieName) {
   }).then(function (response) {
     console.log(response);
     searchMovie.movieTitle = response.Title;
+    $('#exampleModalTitleLabel').text(searchMovie.movieTitle);
     searchMovie.moviePlot = response.Plot;
+    $('#searchModelMoviePlot').text(`Plot : ${searchMovie.moviePlot}`);
     searchMovie.movieActors = response.Actors;
+    $('#searchModelMovieActors').text(`Actors: ${searchMovie.movieActors}`);
     searchMovie.movieRatingSource = response.Ratings[0].Source;
     searchMovie.movieRating = response.Ratings[0].Value;
+    $('#searchModelMovieRating').text(`Rating: ${searchMovie.movieRating} (${searchMovie.movieRatingSource})`);
+    
   });
 }
 
@@ -64,6 +71,7 @@ function getYouTubeAPI(movieName) {
     searchMovie.youtubeTrailerURL = "https://www.youtube.com/embed/" +
         movieTrailedID +
         ";SameSite=Strict;Secure";
+    $('#searchModelMovieTrailer').attr('src',searchMovie.youtubeTrailerURL);
   });
 
 }
