@@ -1,7 +1,16 @@
+var searchMovie = {
+  movieTitle : '',
+  moviePlot : '' , 
+  movieActors : '',
+  movieRatingSource : '',
+  movieRating : '',
+  youtubeTrailerURL : ''
+}
+
 $('#searchButton').on('click', function (event) {
-  alert('inhere');
   event.preventDefault();
-  var movieName = 'Matrix';
+  var movieName = $('#searchMovie').val();
+alert(movieName);
   getMovieDetails(movieName);
 
 });
@@ -9,6 +18,7 @@ $('#searchButton').on('click', function (event) {
 function getMovieDetails(movieName){
   getOMDBApi(movieName);
   getYouTubeAPI(movieName);
+  console.log(searchMovie);
 }
 
 function getOMDBApi(movieName) {
@@ -24,6 +34,11 @@ function getOMDBApi(movieName) {
     method: "GET",
   }).then(function (response) {
     console.log(response);
+    searchMovie.movieTitle = response.Title;
+    searchMovie.moviePlot = response.Plot;
+    searchMovie.movieActors = response.Actors;
+    searchMovie.movieRatingSource = response.Ratings[0].Source;
+    searchMovie.movieRating = response.Ratings[0].Value;
   });
 }
 
@@ -45,6 +60,10 @@ function getYouTubeAPI(movieName) {
     method: "GET",
   }).then(function (response) {
     console.log(response);
+    var movieTrailedID = response.items[0].id.videoId;
+    searchMovie.youtubeTrailerURL = "https://www.youtube.com/embed/" +
+        movieTrailedID +
+        ";SameSite=Strict;Secure";
   });
 
 }
