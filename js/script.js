@@ -194,9 +194,17 @@ function addtosearchList(event) {
     console.log(searchMovieTrailerURL);
     $('.modal-body iframe').attr('src', searchMovieTrailerURL);
   }else if (($(clickedButton).attr('id') === 'addMovie')){
-
     // Add a local Storage Entry
-    localStorage.setItem('movie','Matrix');
+    var movieDB = localStorage.getItem('movieDB');
+    if (movieDB === null){
+      movieDB = [];
+      movieDB[0] = searchMovie;
+    }else{
+      movieDB = JSON.parse(movieDB);
+console.log(movieDB);
+      movieDB.unshift(searchMovie);
+    }
+    localStorage.setItem('movieDB',JSON.stringify(movieDB));
   }
 
 }
