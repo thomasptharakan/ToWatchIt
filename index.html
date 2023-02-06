@@ -52,11 +52,11 @@
         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
                 <!-- <img src="" class="rounded me-2" alt="..." /> -->
-                <strong class="me-auto">The Shawshank Redemption (1994)</strong>
+                <strong class="me-auto" id="toast-title"></strong>
                 <small><i class="bi bi-film"></i> </small>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
-            <div class="toast-body">
+            <div class="toast-body" id="toast-text">
                 <i class="bi bi-check2-circle"></i> Movie added to your watch list.
             </div>
         </div>
@@ -70,13 +70,12 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">
-                        The Shawshank Redemption (1994)
                     </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <iframe frameborder="“0”" allow="“accelerometer;" autoplay; encrypted-media; gyroscope;
-                        picture-in-picture” id="“modalTrailer”" src="“”" allowfullscreen="“true”"></iframe>
+                    <iframe frameborder="0" allow="accelerometer;" autoplay; encrypted-media; gyroscope;
+                        picture-in-picture” id="modalTrailer" src="" allowfullscreen="true"></iframe>
                 </div>
                 <div class="modal-footer"></div>
             </div>
@@ -87,112 +86,13 @@
     <!-- MOVIE CARDS IN LIST -->
     <!-- ================================================================= -->
 
-    <div class="container mt-3">
+    <div class="container mt-3" id="SavedMovies" style="display: none;">
         <h3>Your Movies To Watch</h3>
 
-        <div class="card mb-3" style="max-width: 1200px">
-            <div class="row g-0">
-                <div class="col-md-2">
-                    <img src="https://m.media-amazon.com/images/M/MV5BNjM0MzliMDktZGFlOS00NmQ3LWJhYWItMjBhZmI2OGRlMmMwXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg"
-                        class="img-fluid rounded-start" alt="..." />
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            All About The Benjamins <span>(2002)</span>
-                        </h5>
-                        <p class="card-text">
-                            Bounty hunter Bucum chases bail-jumper Reggie, who runs right
-                            into the scene of a diamond heist and murder and gets shot at as
-                            well. Later they become partners in their pursuit of the $20M in
-                            diamonds and lottery ticket. Their wom...
-                        </p>
-                        <p>
-                            Rating: <span>5.8/10</span>
-                            <span class="text-muted">Internet Movie Database</span>
-                        </p>
-                        <p class="card-text">
-                            <small class="text-muted">Ice Cube, Mike Epps, Tommy Flanagan</small>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-2 d-grid gap-2 p-2">
-                    <button class="btn btn-success" type="button">
-                        <i class="bi bi-check2-circle"></i> Watched it
-                    </button>
-                    <button class="btn btn-dark" type="button">
-                        <i class="bi bi-film"></i> Trailer
-                    </button>
-                </div>
-            </div>
+        <div id="movieDB">
+            <!-- Add Movies from SavedDB localstorage -->
         </div>
 
-        <div class="card mb-3" style="max-width: 1200px">
-            <div class="row g-0">
-                <div class="col-md-2">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_SX300.jpg"
-                        class="img-fluid rounded-start" alt="..." />
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">John Wick <span>(2014)</span></h5>
-                        <p class="card-text">
-                            An ex-hit-man comes out of retirement to track down the
-                            gangsters that killed his dog and took his car.
-                        </p>
-                        <p>
-                            Rating: <span>7.4/10</span>
-                            <span class="text-muted">Internet Movie Database</span>
-                        </p>
-                        <p class="card-text">
-                            <small class="text-muted">Keanu Reeves, Michael Nyqvist, Alfie Allen</small>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-2 d-grid gap-2 p-2">
-                    <button class="btn btn-success" type="button">
-                        <i class="bi bi-check2-circle"></i> Watched it
-                    </button>
-                    <button class="btn btn-dark" type="button">
-                        <i class="bi bi-film"></i> Trailer
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="card mb-3" style="max-width: 1200px">
-            <div class="row g-0">
-                <div class="col-md-2">
-                    <img src="https://m.media-amazon.com/images/M/MV5BY2ZlNWIxODMtN2YwZi00ZjNmLWIyN2UtZTFkYmZkNDQyNTAyXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_SX300.jpg"
-                        class="img-fluid rounded-start" alt="..." />
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Mortal Kombat <span>(2021)</span></h5>
-                        <p class="card-text">
-                            MMA fighter Cole Young seeks out Earth's greatest champions in
-                            order to stand against the enemies of Outworld in a high stakes
-                            battle for the universe.
-                        </p>
-                        <p>
-                            Rating: <span>6.0/10</span>
-                            <span class="text-muted">Internet Movie Database</span>
-                        </p>
-                        <p class="card-text">
-                            <small class="text-muted">Lewis Tan, Jessica McNamee, Josh Lawson</small>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-2 d-grid gap-2 p-2">
-                    <button class="btn btn-success" type="button">
-                        <i class="bi bi-check2-circle"></i> Watched it
-                    </button>
-                    <button class="btn btn-dark" type="button">
-                        <i class="bi bi-film"></i> Trailer
-                    </button>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- jQuery -->
