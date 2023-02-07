@@ -5,159 +5,103 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Adding BootStrap Js (5.3) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <!-- Adding BootStrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+        integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous" />
+    <title>MovieBucket</title>
+    <!-- Ading css Link -->
     <link rel="stylesheet" href="css/styles.css" />
-    <title>ToWatchIt</title>
 </head>
 
 <body>
-    <!-- Add Nav Bar with search function -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"><img src="" /></a>
-        <a class="navbar-brand" href="#">
-            <img src="images/image_Abb.png" width="80" height="60" class="d-inline-block align-middle" alt="" />
-            ToWatchIt
-        </a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto"></ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+    <!-- NavBar -->
+    <nav class="navbar sticky-top bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">To<strong>Watch</strong>It </a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
                     id="searchMovie" />
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchButton" data-toggle="modal"
-                    data-target="#movieSearchModal">
+                <button class="btn btn-outline-light" type="submit" id="searchButton">
                     Search
                 </button>
             </form>
         </div>
     </nav>
 
-    <!-- Add JumboTron for upcoming movie -->
-    <div class="container">
-        <div class="jumbotron mt-4">
-            <div class="row">
-                <div class="col-sm-12 col-md-4">
-                    <!-- <iframe class="responsive-iframe" src="https://www.youtube.com/embed/B5h2xRYmANk;SameSite=Strict;Secure" title="How High"
-                        allowfullscreen="true"></iframe> -->
-                </div>
-                <div class="col-sm-12 col-md-8">
-                    <h1 class="display-4">How High</h1>
-                    <p class="lead">
-                        This is a simple hero unit, a simple jumbotron-style component for
-                        calling extra attention to featured content or information.
-                    </p>
-                    <hr class="my-4" />
-                    <p>Raiting:</p>
-                    <p>Actors:</p>
-                </div>
+    <!-- ================================================================= -->
+    <!-- MOVIE SEARCH RESULT -->
+    <!-- ================================================================= -->
+
+    <div class="container my-4" style="display: none" id="resultsContainer">
+        <h3>Search Results</h3>
+
+        <div id="result">
+            <!-- Add search Result here -->
+        </div>
+        <hr />
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- TOAST -->
+    <!-- ================================================================= -->
+
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <!-- <img src="" class="rounded me-2" alt="..." /> -->
+                <strong class="me-auto" id="toast-title"></strong>
+                <small><i class="bi bi-film"></i> </small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="toast-text">
+                <i class="bi bi-check2-circle"></i> Movie added to your watch list.
             </div>
         </div>
     </div>
 
-    <!-- Add card group -->
-    <div class="container">
-        <div class="row row-cols-1 row-cols-md-3">
-            <div class="col mb-2">
-                <div class="card">
-                    <h5 class="card-title" style="text-align: center; padding: 5px">
-                        23/03/2023
-                    </h5>
-                    <!-- <iframe src="https://www.youtube.com/embed/vKQi3bBA1y8;SameSite=Strict;Secure" title="How High" allowfullscreen="true"
-                        style="height: 100%;"></iframe> -->
-                    <div class="card-body">
-                        <h5 class="card-title">Cinderella</h5>
-                        <p class="card-text">This is the plot of the movie</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-2">
-                <div class="card">
-                    <h5 class="card-title" style="text-align: center; padding: 5px">
-                        24/03/2023
-                    </h5>
-                    <!-- <iframe src="https://www.youtube.com/embed/pU8-7BX9uxs;SameSite=Strict;Secure" title="How High" allowfullscreen="true"
-                        style="height: 100%;"></iframe> -->
-                    <div class="card-body">
-                        <h5 class="card-title">John Wick 3</h5>
-                        <p class="card-text">This is the plot of the movie</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-2">
-                <div class="card">
-                    <h5 class="card-title" style="text-align: center; padding: 5px">
-                        25/03/2023
-                    </h5>
-                    <!-- <iframe src="https://www.youtube.com/embed/B5h2xRYmANk;SameSite=Strict;Secure" title="How High" allowfullscreen="true"
-                        style="height: 100%;"></iframe> -->
-                    <div class="card-body">
-                        <h5 class="card-title">Cinderella</h5>
-                        <p class="card-text">This is the plot of the movie</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-2">
-                <div class="card">
-                    <h5 class="card-title" style="text-align: center; padding: 5px">
-                        25/03/2023
-                    </h5>
-                    <!-- <iframe src="https://www.youtube.com/embed/B5h2xRYmANk;SameSite=Strict;Secure" title="How High" allowfullscreen="true"
-                        style="height: 100%;"></iframe> -->
-                    <div class="card-body">
-                        <h5 class="card-title">Cinderella</h5>
-                        <p class="card-text">This is the plot of the movie</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="movieSearchModal" tabindex="-1" aria-labelledby="searchModalTitleLabel" aria-hidden="true">
+    <!-- ================================================================= -->
+    <!-- MODAL WITH MOVIE TRAILER -->
+    <!-- ================================================================= -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header" id="modalHeader">
-                    <h5 class="modal-title" id="searchModalTitleLabel">Movie Title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" style="text-align: center;">
-                    <iframe id="searchModelMovieTrailer" src="" allowfullscreen="true"
-                        style="height: 100%;"></iframe>
-                    <p class="modal-title" id="searchModelMoviePlot">Plot</p>
-                    <p class="modal-title" id="searchModelMovieActors">Actors</p>
-                    <p class="modal-title" id="searchModelMovieRating">Rating (Rating Source)</p>
+                <div class="modal-body">
+                    <iframe frameborder="0" allow="accelerometer;" autoplay; encrypted-media; gyroscope;
+                        picture-in-picture” id="modalTrailer" src="" allowfullscreen="true"></iframe>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                        Close
-                    </button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                <div class="modal-footer"></div>
             </div>
         </div>
     </div>
 
-    <!-- Added jquery ui and CSS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet"
-        href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-    <!-- Added BootStrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    <!-- ================================================================= -->
+    <!-- MOVIE CARDS IN LIST -->
+    <!-- ================================================================= -->
+
+    <div class="container mt-3" id="SavedMovies" style="display: none;">
+        <h3>Your Movies To Watch</h3>
+
+        <div id="movieDB">
+            <!-- Add Movies from SavedDB localstorage -->
+        </div>
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
-    <!-- Keys JS -->
     <script src="./js/keys.js"></script>
-    <!-- Script JS -->
-    <script src="js/script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
