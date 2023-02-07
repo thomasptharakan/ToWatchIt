@@ -13,6 +13,7 @@ $("#searchButton").on("click", function (event) {
   event.preventDefault();
   var movieName = $("#searchMovie").val();
   getMovieDetails(movieName);
+  $("#searchMovie").val("")
 });
 
 function getMovieDetails(movieName) {
@@ -341,5 +342,9 @@ function populateSearchResults() {
 
   }
 }
+
+$(".btn-close").on("click", function () {
+  $("#modalTrailer").attr("src", "");
+});
 
 populateSearchResults();
