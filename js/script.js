@@ -256,6 +256,12 @@ function removeFromList(event) {
 
 function populateSearchResults() {
 
+
+  //Added to get keys from localStorage if key.js is not included.
+  if ((omdbApiKey==null)||(youTubeApiKey==null)){
+    youTubeApiKey = localStorage.getItem('youTubeApiKey');
+    omdbApiKey = localStorage.getItem('omdbApiKey');
+  }
   var movieDB = localStorage.getItem('movieDB');
   movieDB = JSON.parse(movieDB);
   if (!(movieDB === null)) {
@@ -343,8 +349,11 @@ function populateSearchResults() {
   }
 }
 
+// =================================================================
+// STOPS THE YOUTUBE VIDEO PLAYING WHEN MODAL IS CLOSED
+// =================================================================
 $(".btn-close").on("click", function () {
   $("#modalTrailer").attr("src", "");
-});
+ });
 
 populateSearchResults();

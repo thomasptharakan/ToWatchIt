@@ -1,72 +1,76 @@
-<!-- @format -->
+# ToWatchIt
+ 
+![mainPhoto](./images/Application_Working.gif)
 
-# Console-Finances
+ ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-## Description
 
-I have created a Finance Analysis using JavaScript which calculates the following:
+The main functionality of our application is adding the desired movies to your movie list and watch them in your free time.
+This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code found in script.js.
+The target audience of the application is the movie lovers. 
 
-- The total number of months included in the dataset.
+Link to Deployed Site : https://thomasptharakan.github.io/ToWatchIt/
+!! The code requires you to add apikeys(omdbApiKey & youTubeApiKey ) to localstorage for the search function to work.
 
-- The net total amount of Profit/Losses over the entire period.
 
-- The average of the changes in Profit/Losses over the entire period.
 
-  - You will need to track what the total change in profits are from month to month and then find the average.
-  - (`Total/Number of months`)
+## Requirements
 
-- The greatest increase in profits (date and amount) over the entire period.
+* Use Bootstrap.
 
-- The greatest decrease in losses (date and amount) over the entire period.
+* Be deployed to GitHub Pages.
 
-![HTML Page & Console](./starter/Images/HTML%26Console.png)
+* Be interactive (in other words, accept and respond to user input).
 
-## Installation
+* Use at least two server-side APIs Links to an external site..
 
-N/A
+* Use modals instead of alerts, confirms, or prompts.
 
-## Usage
+* Use client-side storage to store persistent data.
 
-- To begin with, I accessed the nested array and created two separate arrays using the _push()_ method - one for the months and the other for the profits/losses. However, upon further inspection, I noticed that the elements in the new arrays were being counted twice due to the double iteration used to access the inner arrays. As a result, I created new arrays to remove duplicates by only including elements with even indices.
-- I calculated the number of months by using the _length_ method.
+* Be responsive.
 
-  ![JS-Code-snippet](./starter/Images/Screenshot%202022-12-16%20at%2021.09.34.png)
+* Have a polished UI.
 
-- I then determined the total amount of profits and losses by creating a new variable, **totalAmount**, setting the inital value to 0 and then interating through the **sums** array in order to add the elements and store the sum in the **totalAmount** variable.
+* Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class/id naming conventions, indentation, quality comments, and so on).
 
-  ![JS-Code-snippet](./starter/Images/Screenshot%202022-12-16%20at%2021.14.20.png)
+* Have a quality README (including a unique name, description, technologies used, screenshot, and link to the deployed application).
 
-- Next, I determined the average of the changes in Profit/Losses by creating an array called **changes** and iterating through the _sums_ array to find the difference between consecutive elements, which I added to the **changes** array. I then created the **total** variable by summing the elements in the **changes** array, and the **averageChange** variable by dividing the total by the number of months minus one (since there are 86 months, but only 85 changes). I used the _toFixed(2)_ method to display only two decimal points.
 
-  ![JS-Code-snippet](./starter/Images/Screenshot%202022-12-16%20at%2021.14.39.png)
 
-- For the greatest increase/decrease, I first declared the variables **maxIncrease** and **maxDecrease** and assigned the first element of the **changes** array to them. I then used a _for loop_ to iterate through the **changes** array starting at the second element and compare the values of **maxIncrease**/**maxDecrease** to the current element. If the variables were greater/lower than the current element, I replaced their values with the current element. As I had used separate arrays for the months and changes, I then created two variables for the best and worst months and assigned them the indices of the **maxIncrease** and **maxDecrease** elements, respectively. I used these variables _plus one_ as indices for the months array (plus one because there are 85 changes and 86 months, and the first month cannot have any changes).
+## The language used:
 
-  ![JS-Code-snippet](./starter/Images/Screenshot%202022-12-16%20at%2021.14.58.png)
-  ![JS-Code-snippet](./starter/Images/Screenshot%202022-12-16%20at%2021.15.09.png)
+* HTML
+* JavaScript
+* CSS
+
+
+
+## How to use it
+
+* Open the app.
+* In the search bar type in the title of the movie.
+* A modal will pop up with the searched movie.
+* Choose from the two options:
+* Add the movie to the list, or
+* Watch the trailer 
+
+## Authors
+* [Thomas Tharakan](https://github.com/thomasptharakan)
+* [Waseem Mohammad](https://github.com/wmohammad83)
+* [Tina Georgescu](https://github.com/cristinabadea)
+* [Victor Iglunov](https://github.com/WebArchitect89)
+
 
 ## Credits
 
-N/A
+* YouTube API
+* OMDB API 
 
-## License
+## Licence
 
-MIT License
-
-## Badges
-
-N/A
-
-## Features
-
-N/A
-
-## How to Contribute
-
-N/A
-
-## Tests
-
-N/A
-
-
+* MIT License
