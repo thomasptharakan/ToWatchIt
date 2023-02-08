@@ -15,7 +15,10 @@ The target audience of the application is the movie lovers.
 
 Link to Deployed Site : https://thomasptharakan.github.io/ToWatchIt/
 ```diff
--The code requires you to add apikeys(omdbApiKey & youTubeApiKey ) to localstorage for the search function to work.
+-The code requires you to add apikeys(omdbApiKey & youTubeApiKey ) to localstorage for the search function to work. 
+- Make sure there are no spaces in the key names 
+- omdbApiKey
+- youTubeApiKey
 ```
 
 
