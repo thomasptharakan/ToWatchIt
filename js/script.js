@@ -151,7 +151,7 @@ function addSearchResult() {
   colPoster.addClass("col-md-2");
 
   var poster = $("<img>");
-  poster.addClass("img-fluid rounded-start");
+  poster.addClass("img-fluid rounded center-block");
   poster.attr("id", "searchMoviePoster");
   poster.attr("src", searchMovie.moviePoster);
   colPoster.append(poster);
@@ -325,7 +325,7 @@ function populateSearchResults() {
       colPoster.addClass("col-md-2");
 
       var poster = $("<img>");
-      poster.addClass("img-fluid rounded-start");
+      poster.addClass("img-fluid rounded center-block");
       poster.attr("src", movieDB[i].moviePoster);
       colPoster.append(poster);
 
