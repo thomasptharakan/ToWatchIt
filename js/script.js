@@ -254,8 +254,8 @@ function populateSearchResults() {
   // IS NOT FOUND
   // =================================================================
   if (omdbApiKey == null || youTubeApiKey == null) {
-    youTubeApiKey = localStorage.getItem("youTubeApiKey");
-    omdbApiKey = localStorage.getItem("omdbApiKey");
+    youTubeApiKey = localStorage.getItem("youTubeApiKey").trim();
+    omdbApiKey = localStorage.getItem("omdbApiKey").trim();
   }
   var movieDB = localStorage.getItem("movieDB");
   movieDB = JSON.parse(movieDB);
