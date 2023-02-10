@@ -14,12 +14,15 @@ This app will run in the browser, and will feature dynamically updated HTML and 
 The target audience of the application is the movie lovers. 
 
 Link to Deployed Site : https://thomasptharakan.github.io/ToWatchIt/
+
 ```diff
 -The code requires you to add apikeys(omdbApiKey & youTubeApiKey ) to localstorage for the search function to work. 
 - Make sure there are no spaces in the key names 
 - omdbApiKey
 - youTubeApiKey
 ```
+
+ ********* [How to Add keys to Local Storage](https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/storage/localstorage) ***************
 
  ********* [How to Add keys to Local Storage](https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/storage/localstorage) ***************
 
