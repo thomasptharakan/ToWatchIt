@@ -21,6 +21,7 @@ Link to Deployed Site : https://thomasptharakan.github.io/ToWatchIt/
 - youTubeApiKey
 ```
 
+ ********* [How to Add keys to Local Storage](https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/storage/localstorage) ***************
 
 
 ## Requirements

@@ -120,7 +120,7 @@ function addSearchResult() {
   var cardActors = $("<p>");
   cardActors.addClass("card-text");
   cardActors.attr("id", "searchMovieActors");
-  cardActors.text(searchMovie.movieActors);
+  cardActors.text(`Actors: ${searchMovie.movieActors}`);
   cardBody.append(cardActors);
 
   var colButtons = $("<div>");
@@ -292,7 +292,7 @@ function populateSearchResults() {
 
       var cardActors = $("<p>");
       cardActors.addClass("card-text");
-      cardActors.text(movieDB[i].movieActors);
+      cardActors.text(`Actors: ${movieDB[i].movieActors}`);
       cardBody.append(cardActors);
 
       var colButtons = $("<div>");
